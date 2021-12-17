@@ -52,7 +52,11 @@ class _HomeNewState extends State<HomeNew> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            Image.file(File(list![index].image)),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.1,
+                              height: MediaQuery.of(context).size.height * 0.1,
+                              child: Image.file(File(list![index].image)),
+                            ),
                             SizedBox(width: 10),
                             Expanded(
                               flex: 3,
