@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:placement_test/AddMovie.dart';
 
+import 'Detail.dart';
 import 'dbprovider.dart';
 import 'memo_model.dart';
 
@@ -45,7 +46,12 @@ class _HomeNewState extends State<HomeNew> {
                 itemCount: list!.length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DetailPage(model: list![index],)),
+                      );
+                    },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12),
                       child: Container(
